@@ -77,41 +77,6 @@ def get_macros(profile, goals):
     return run_flow("", tweaks=TWEAKS, application_token=APPLICATION_TOKEN)
 
 
-# def run_flow(message: str,
-#              output_type: str = "chat",
-#              input_type: str = "chat",
-#              tweaks: Optional[dict] = None,
-#              application_token: Optional[str] = None) -> str:
-#     api_url = "http://localhost:7860/api/v1/run/macros"
-
-#     payload = {
-#         "input_value": message,
-#         "output_type": output_type,
-#         "input_type": input_type,
-#     }
-#     if tweaks:
-#         payload["tweaks"] = tweaks
-
-#     headers = {"Content-Type": "application/json"}
-#     if application_token:
-#         headers["Authorization"] = f"Bearer {application_token}"
-
-#     response = requests.post(api_url, json=payload, headers=headers)
-
-#     try:
-#         data = response.json()
-#     except Exception:
-#         return f"❌ API returned non-JSON: {response.text}"
-
-#     # Debugging: see full response if 'outputs' is missing
-#     if "outputs" not in data:
-#         return f"❌ Unexpected response: {json.dumps(data, indent=2)}"
-
-#     try:
-#         return data["outputs"][0]["outputs"][0]["results"]["text"]["data"]["text"]
-#     except Exception:
-#         return f"❌ Could not parse AI response: {json.dumps(data, indent=2)}"
-
 def run_flow(message: str,
              output_type: str = "chat",
              input_type: str = "chat",
@@ -138,14 +103,50 @@ def run_flow(message: str,
     except Exception:
         return f"❌ API returned non-JSON: {response.text}"
 
-    # Debugging: Show full response if 'outputs' is missing
+    # Debugging: see full response if 'outputs' is missing
     if "outputs" not in data:
         return f"❌ Unexpected response: {json.dumps(data, indent=2)}"
 
-    # Safely attempt to extract AI response
     try:
-        ai_response = data.get("outputs", [{}])[0].get("message", {}).get("text", "No response text found.")
-        return ai_response
-    except Exception as e:
-        # Debug any missing keys or errors during parsing
-        return f"❌ Could not parse AI response: {e}\nFull response: {json.dumps(data, indent=2)}"
+        return data["outputs"][0]["outputs"][0]["results"]["text"]["data"]["text"]
+    except Exception:
+        # print("Sameed" ,data)
+        return f"❌ Could not parse AI response: {json.dumps(data, indent=2)}"
+
+# def run_flow(message: str,
+#              output_type: str = "chat",
+#              input_type: str = "chat",
+#              tweaks: Optional[dict] = None,
+#              application_token: Optional[str] = None) -> str:
+#     api_url = "http://localhost:7860/api/v1/run/macros"
+
+#     payload = {
+#         "input_value": message,
+#         "output_type": output_type,
+#         "input_type": input_type,
+#     }
+#     if tweaks:
+#         payload["tweaks"] = tweaks
+
+#     headers = {"Content-Type": "application/json"}
+#     if application_token:
+#         headers["Authorization"] = f"Bearer {application_token}"
+
+#     response = requests.post(api_url, json=payload, headers=headers)
+
+#     try:
+#         data = response.json()
+#     except Exception:
+#         return f"❌ API returned non-JSON: {response.text}"
+
+#     # Debugging: Show full response if 'outputs' is missing
+#     if "outputs" not in data:
+#         return f"❌ Unexpected response: {json.dumps(data, indent=2)}"
+
+#     # Safely attempt to extract AI response
+#     try:
+#         ai_response = data.get("outputs", [{}])[0].get("message", {}).get("text", "No response text found.")
+#         return ai_response
+#     except Exception as e:
+#         # Debug any missing keys or errors during parsing
+#         return f"❌ Could not parse AI response: {e}\nFull response: {json.dumps(data, indent=2)}"
