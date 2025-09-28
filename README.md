@@ -68,11 +68,8 @@ This project is an **AI-powered fitness assistant** that generates **personalize
 5. **RAG (Retrieval-Augmented Generation)**:
    - **Langflow** integrates **RAG** by retrieving contextually relevant data from Astra DB before generating responses using **OpenAI**.
    - The knowledge base is used to provide context-aware, personalized results.
-
-6. **LangChain**:
-   - **Chains** different steps (user input → retrieval → inference → output) and ensures seamless execution of tasks.
    
-7. **OpenAI API**:
+6. **OpenAI API**:
    - The core of the system that generates the **workout routine** after collecting all necessary context (user profile, notes, etc.).
 
 ---
