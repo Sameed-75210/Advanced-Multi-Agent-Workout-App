@@ -1,10 +1,10 @@
-# 🏋️‍♂️ AI-Powered Personalized Workout Assistant
+# AI-Powered Personalized Workout Assistant
 
 An **AI-powered fitness assistant** that generates **personalized workout plans** using **Langflow**, **Astra DB**, **Streamlit**, and **OpenAI's GPT-3**. The system employs **Retrieval-Augmented Generation (RAG)** to deliver context-aware responses based on user profiles and preferences stored in a **vector database**.
 
 ---
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Features](#features)
 - [Tech Stack](#tech-stack)
@@ -17,7 +17,7 @@ An **AI-powered fitness assistant** that generates **personalized workout plans*
 
 ---
 
-## 🚀 Features
+## Features
 
 - **User Profile Management**  
   Manage user profiles with age, weight, height, fitness goals, and preferences.
@@ -39,7 +39,7 @@ An **AI-powered fitness assistant** that generates **personalized workout plans*
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 **Frontend**
 - [Streamlit](https://streamlit.io/): Fast and interactive Python web app framework.
@@ -54,7 +54,7 @@ An **AI-powered fitness assistant** that generates **personalized workout plans*
 
 ---
 
-## 🏗️ System Architecture & Interaction
+## System Architecture & Interaction
 
 ### Component Overview
 
@@ -83,7 +83,7 @@ An **AI-powered fitness assistant** that generates **personalized workout plans*
 
 ---
 
-## 🌐 Flow Diagram
+## Flow Diagram
 
 <img width="1920" height="1017" alt="Langflow System Architecture" src="https://github.com/user-attachments/assets/a7337eaa-91d5-4226-8ebf-7af7582a1067" />
 
@@ -91,7 +91,7 @@ An **AI-powered fitness assistant** that generates **personalized workout plans*
 
 ---
 
-## 🔧 Installation & Setup
+## Installation & Setup
 
 ### 1. Clone the Repository
 
@@ -134,7 +134,7 @@ streamlit run main.py
 
 ---
 
-## 🔮 Future Improvements
+## Future Improvements
 
 - Add user authentication for persistent profiles
 - Visualize workout progress (charts, stats)
@@ -143,9 +143,9 @@ streamlit run main.py
 
 ---
 
-## 👨‍💻 Author
+## Author
 
 **Muhammad Sameed**  
 _Data Scientist_
 
-Built with ❤️ using Streamlit + Langflow + Astra DB + OpenAI.
+Built with Streamlit + Langflow + Astra DB + OpenAI.
