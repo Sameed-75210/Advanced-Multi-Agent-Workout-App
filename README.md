@@ -38,8 +38,6 @@ This project is an **AI-powered fitness assistant** that generates **personalize
   
 - **[Astra DB](https://www.datastax.com/astra/db)**: A **vector database** used to store **user notes** and other relevant workout information. It allows semantic search, ensuring that relevant data is fetched to inform the AI's responses.
 
-- **[LangChain](https://www.langchain.com/)**: An LLM framework used to chain different components together. LangChain helps manage the flow of data between different agents, knowledge bases, and the OpenAI model.
-
 ### **Vector Store**
 - **Astra DB with Vector Search**: The **vector database** stores user profiles and notes. It supports **semantic search**, which is key to the **RAG** approach, allowing the AI to retrieve relevant information before generating a response.
 
